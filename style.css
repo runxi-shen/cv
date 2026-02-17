@@ -1,0 +1,333 @@
+/* ── CSS Custom Properties ── */
+[data-theme="dark"] {
+  --bg: #0D1117;
+  --surface: #161B22;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --accent: #5E89B4;
+  --accent-hover: #7299C1;
+  --border: #30363D;
+}
+
+[data-theme="light"] {
+  --bg: #F6F8FA;
+  --surface: #EAEEF2;
+  --text-primary: #1F2937;
+  --text-secondary: #656D76;
+  --accent: #2D5F8F;
+  --accent-hover: #1D4B75;
+  --border: #D0D7DE;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  text-align: justify;
+}
+
+/* ── Theme Toggle ── */
+.theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1;
+  padding: 0.25rem;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+}
+
+/* ── Header ── */
+header {
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.accent-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 0.75rem 0 1rem;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-row {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.contact-row a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-row a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.4rem;
+}
+
+/* ── Sections ── */
+section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── About ── */
+.about p {
+  color: var(--text-primary);
+}
+
+/* ── Experience / Education Entries ── */
+.entry {
+  margin-bottom: 1.5rem;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.entry-org {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.entry-date {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.entry-title {
+  font-style: italic;
+  color: var(--text-primary);
+  margin-top: 0.15rem;
+}
+
+.entry-specialization {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+/* ── Sub-entries (projects within a position) ── */
+.sub-entry {
+  margin-top: 0.75rem;
+}
+
+.sub-entry-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+}
+
+/* ── Unified List Style ── */
+ul, ol {
+  list-style: none;
+  padding-left: 1.1rem;
+}
+
+li {
+  position: relative;
+  padding-left: 0.5rem;
+  color: var(--text-primary);
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0.7em;
+  width: 7px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.entry li {
+  margin-bottom: 0.4rem;
+}
+
+/* ── Publications ── */
+.publications li {
+  margin-bottom: 0.75rem;
+}
+
+.pub-subsection {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.pub-subsection:first-child {
+  margin-top: 0;
+}
+
+.co-first {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.88rem;
+}
+
+/* ── Talks & Posters specifics ── */
+.talks li,
+.posters li {
+  margin-bottom: 0.75rem;
+}
+
+.talks ul,
+.posters ul {
+  padding-left: 1.1rem;
+}
+
+.award {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ── Skills ── */
+.skills-category {
+  margin-bottom: 0.75rem;
+}
+
+.skills-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ── Journal Reviewer ── */
+.reviewer p {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* ── Links ── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .entry-header {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}
+
+/* ── Print ── */
+@media print {
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --bg: #F6F8FA;
+    --surface: #EAEEF2;
+    --text-primary: #1F2937;
+    --text-secondary: #656D76;
+    --accent: #2D5F8F;
+    --accent-hover: #1D4B75;
+    --border: #D0D7DE;
+  }
+
+  body {
+    padding: 0;
+    max-width: none;
+  }
+
+  .theme-toggle {
+    display: none;
+  }
+
+  .entry {
+    page-break-inside: avoid;
+  }
+
+  .talks li,
+  .posters li,
+  .publications li {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
