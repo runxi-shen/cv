@@ -1,2 +1,2 @@
-# runxi-shen-cv
-Repository for hosting my CV on Github.
+# cv
+Repository for hosting my live CV on Github.
